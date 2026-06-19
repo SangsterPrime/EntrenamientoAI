@@ -1,0 +1,82 @@
+{
+  "modelo_seleccionado": "Random Forest (optimizado)",
+  "criterio_seleccion": "Máximo Recall (coste de falso negativo alto), desempate por F1",
+  "hiperparametros_optimizados": {
+    "max_depth": 4,
+    "min_samples_leaf": 4,
+    "n_estimators": 100
+  },
+  "recall_cv5_optimizado": 0.7562,
+  "calidad_datos": {
+    "n_filas": 500,
+    "n_columnas": 7,
+    "nulos": 0,
+    "duplicados": 0,
+    "balance_pct": {
+      "0": 74.6,
+      "1": 25.4
+    },
+    "ratio_desbalance": 2.94
+  },
+  "metricas_por_modelo": {
+    "Regresión Logística": {
+      "accuracy": 0.78,
+      "precision": 0.5484,
+      "recall": 0.68,
+      "f1": 0.6071,
+      "roc_auc": 0.8176,
+      "gini": 0.6352,
+      "tiempo_entrenamiento_s": 0.0048,
+      "escalado": true
+    },
+    "Árbol de Decisión": {
+      "accuracy": 0.76,
+      "precision": 0.5143,
+      "recall": 0.72,
+      "f1": 0.6,
+      "roc_auc": 0.7869,
+      "gini": 0.5739,
+      "tiempo_entrenamiento_s": 0.0029,
+      "escalado": false
+    },
+    "Random Forest": {
+      "accuracy": 0.8,
+      "precision": 0.5862,
+      "recall": 0.68,
+      "f1": 0.6296,
+      "roc_auc": 0.8651,
+      "gini": 0.7301,
+      "tiempo_entrenamiento_s": 0.2085,
+      "escalado": false
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.8,
+      "precision": 0.6471,
+      "recall": 0.44,
+      "f1": 0.5238,
+      "roc_auc": 0.8443,
+      "gini": 0.6885,
+      "tiempo_entrenamiento_s": 0.1225,
+      "escalado": false
+    },
+    "Random Forest (optimizado)": {
+      "accuracy": 0.79,
+      "precision": 0.5588,
+      "recall": 0.76,
+      "f1": 0.6441,
+      "roc_auc": 0.8773,
+      "gini": 0.7547,
+      "tiempo_entrenamiento_s": null,
+      "escalado": false
+    }
+  },
+  "importancia_variables": {
+    "edad": 0.1842,
+    "anos_cliente": 0.2123,
+    "uso_datos_gb": 0.1064,
+    "llamadas_mes": 0.0753,
+    "reclamos": 0.3203,
+    "plan_premium": 0.1015
+  },
+  "tiempo_total_s": 43.358
+}

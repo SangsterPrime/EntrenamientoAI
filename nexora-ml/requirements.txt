@@ -1,0 +1,9 @@
+# NEXORA · Módulo de Inteligencia Predictiva (Parcial 3 — ITY1101)
+# Versiones verificadas en el entorno de desarrollo (Python 3.11)
+pandas==2.3.3
+numpy==2.2.6
+scikit-learn==1.9.0
+matplotlib==3.10.6
+seaborn==0.13.2
+joblib==1.5.3
+streamlit==1.58.0

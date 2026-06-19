@@ -1,0 +1,501 @@
+edad,anos_cliente,uso_datos_gb,llamadas_mes,reclamos,plan_premium,abandona,prob_abandono,segmento_riesgo,accion_retencion
+56,7,3.3,80,4,0,0,0.6342,ALTO,Contacto prioritario + oferta de retención
+69,5,4.5,71,4,1,0,0.3695,MEDIO,Campaña de fidelización automatizada
+46,6,14.4,20,0,1,0,0.0638,BAJO,Monitoreo estándar
+32,7,10.1,17,0,1,0,0.0641,BAJO,Monitoreo estándar
+60,3,15.2,93,1,0,0,0.1143,BAJO,Monitoreo estándar
+25,3,2.5,63,2,1,0,0.4168,MEDIO,Campaña de fidelización automatizada
+38,5,11.0,81,4,1,1,0.4514,MEDIO,Campaña de fidelización automatizada
+56,6,7.9,94,1,1,0,0.0772,BAJO,Monitoreo estándar
+36,9,9.4,37,2,0,0,0.1594,BAJO,Monitoreo estándar
+40,5,12.3,31,1,0,0,0.1522,BAJO,Monitoreo estándar
+28,1,10.3,10,4,0,1,0.8966,ALTO,Contacto prioritario + oferta de retención
+28,4,11.0,44,0,0,0,0.2224,BAJO,Monitoreo estándar
+41,5,10.0,88,0,0,0,0.1224,BAJO,Monitoreo estándar
+53,5,8.5,32,2,1,0,0.0742,BAJO,Monitoreo estándar
+57,7,15.6,40,3,0,0,0.5122,MEDIO,Campaña de fidelización automatizada
+41,4,0.7,7,2,0,0,0.4321,MEDIO,Campaña de fidelización automatizada
+20,1,12.2,10,3,0,1,0.9384,ALTO,Contacto prioritario + oferta de retención
+39,5,11.5,85,1,0,0,0.1191,BAJO,Monitoreo estándar
+19,7,14.5,50,1,0,1,0.4474,MEDIO,Campaña de fidelización automatizada
+41,6,12.2,87,4,0,0,0.6121,ALTO,Contacto prioritario + oferta de retención
+61,5,16.6,40,3,0,0,0.504,MEDIO,Campaña de fidelización automatizada
+47,4,19.2,16,4,1,0,0.2156,BAJO,Monitoreo estándar
+55,2,7.2,75,0,1,0,0.1329,BAJO,Monitoreo estándar
+19,4,4.9,45,3,0,1,0.9143,ALTO,Contacto prioritario + oferta de retención
+38,3,8.8,31,2,0,0,0.1431,BAJO,Monitoreo estándar
+50,1,6.1,78,0,1,0,0.5465,MEDIO,Campaña de fidelización automatizada
+29,8,12.5,79,0,0,1,0.2795,BAJO,Monitoreo estándar
+39,5,18.3,53,2,0,0,0.1416,BAJO,Monitoreo estándar
+61,4,3.2,85,0,1,0,0.1287,BAJO,Monitoreo estándar
+42,8,2.5,91,3,0,1,0.6668,ALTO,Contacto prioritario + oferta de retención
+66,7,5.5,19,4,1,0,0.2388,BAJO,Monitoreo estándar
+44,2,14.7,32,0,0,0,0.2202,BAJO,Monitoreo estándar
+59,1,12.1,73,3,0,1,0.8808,ALTO,Contacto prioritario + oferta de retención
+45,4,2.5,39,1,0,1,0.4243,MEDIO,Campaña de fidelización automatizada
+33,8,18.4,31,3,1,0,0.2417,BAJO,Monitoreo estándar
+32,2,15.9,96,4,0,1,0.7043,ALTO,Contacto prioritario + oferta de retención
+64,3,0.9,1,3,0,1,0.5688,MEDIO,Campaña de fidelización automatizada
+68,1,13.2,96,2,1,0,0.4579,MEDIO,Campaña de fidelización automatizada
+61,1,15.5,32,4,0,1,0.8617,ALTO,Contacto prioritario + oferta de retención
+69,3,7.8,76,1,0,0,0.1397,BAJO,Monitoreo estándar
+20,5,1.8,29,2,1,0,0.3918,MEDIO,Campaña de fidelización automatizada
+54,3,2.0,32,3,0,1,0.597,MEDIO,Campaña de fidelización automatizada
+68,1,2.5,76,4,1,1,0.6859,ALTO,Contacto prioritario + oferta de retención
+24,1,16.9,25,1,1,1,0.576,MEDIO,Campaña de fidelización automatizada
+38,8,18.3,21,2,1,0,0.072,BAJO,Monitoreo estándar
+26,2,2.9,65,1,0,0,0.6041,ALTO,Contacto prioritario + oferta de retención
+56,3,5.1,37,3,1,0,0.2562,BAJO,Monitoreo estándar
+35,2,3.7,89,1,0,0,0.2166,BAJO,Monitoreo estándar
+21,3,4.1,45,0,1,0,0.3309,BAJO,Monitoreo estándar
+42,7,16.8,14,2,0,0,0.1679,BAJO,Monitoreo estándar
+31,1,7.0,97,1,0,1,0.5141,MEDIO,Campaña de fidelización automatizada
+67,8,6.6,43,3,0,1,0.6074,ALTO,Contacto prioritario + oferta de retención
+26,2,4.9,48,3,1,0,0.679,ALTO,Contacto prioritario + oferta de retención
+43,3,12.4,74,1,1,0,0.0705,BAJO,Monitoreo estándar
+19,9,7.9,60,3,0,1,0.8715,ALTO,Contacto prioritario + oferta de retención
+37,7,15.0,66,4,0,1,0.6286,ALTO,Contacto prioritario + oferta de retención
+45,4,4.5,5,4,1,0,0.2336,BAJO,Monitoreo estándar
+64,5,15.9,8,4,0,0,0.5218,MEDIO,Campaña de fidelización automatizada
+24,2,12.3,5,0,0,1,0.5433,MEDIO,Campaña de fidelización automatizada
+61,8,2.7,72,1,1,0,0.232,BAJO,Monitoreo estándar
+25,4,8.6,94,0,0,0,0.2874,BAJO,Monitoreo estándar
+64,9,17.3,31,3,1,0,0.237,BAJO,Monitoreo estándar
+52,5,18.5,40,0,0,0,0.1615,BAJO,Monitoreo estándar
+31,9,9.6,75,3,0,0,0.609,ALTO,Contacto prioritario + oferta de retención
+34,4,9.9,7,3,0,0,0.5236,MEDIO,Campaña de fidelización automatizada
+53,5,18.4,71,2,1,0,0.0729,BAJO,Monitoreo estándar
+67,9,11.9,49,4,0,0,0.6126,ALTO,Contacto prioritario + oferta de retención
+57,8,1.1,91,3,1,0,0.4053,MEDIO,Campaña de fidelización automatizada
+21,3,18.3,61,2,0,0,0.4262,MEDIO,Campaña de fidelización automatizada
+19,1,5.3,83,4,1,1,0.8776,ALTO,Contacto prioritario + oferta de retención
+23,3,11.8,61,3,0,1,0.8813,ALTO,Contacto prioritario + oferta de retención
+59,4,3.7,6,3,0,0,0.537,MEDIO,Campaña de fidelización automatizada
+21,2,1.2,74,0,1,0,0.5565,MEDIO,Campaña de fidelización automatizada
+46,1,6.6,83,0,0,1,0.6166,ALTO,Contacto prioritario + oferta de retención
+35,7,15.7,79,4,0,1,0.6282,ALTO,Contacto prioritario + oferta de retención
+43,8,5.9,3,3,1,0,0.235,BAJO,Monitoreo estándar
+61,7,4.8,5,1,0,0,0.2214,BAJO,Monitoreo estándar
+51,5,4.6,57,0,1,0,0.1085,BAJO,Monitoreo estándar
+27,1,10.5,21,4,0,1,0.908,ALTO,Contacto prioritario + oferta de retención
+53,7,19.5,25,3,1,0,0.2042,BAJO,Monitoreo estándar
+31,7,9.5,2,3,0,0,0.5305,MEDIO,Campaña de fidelización automatizada
+48,9,11.4,40,1,0,0,0.1721,BAJO,Monitoreo estándar
+65,3,17.3,59,4,1,0,0.3458,BAJO,Monitoreo estándar
+32,9,10.9,13,3,1,0,0.2926,BAJO,Monitoreo estándar
+25,1,4.1,74,0,0,1,0.7731,ALTO,Contacto prioritario + oferta de retención
+31,1,6.3,81,1,0,0,0.5589,MEDIO,Campaña de fidelización automatizada
+40,4,6.5,11,4,1,0,0.2576,BAJO,Monitoreo estándar
+57,9,8.2,86,1,0,0,0.1312,BAJO,Monitoreo estándar
+38,6,8.8,11,0,1,0,0.0647,BAJO,Monitoreo estándar
+33,3,16.1,12,4,1,0,0.2726,BAJO,Monitoreo estándar
+62,1,7.3,24,1,0,0,0.543,MEDIO,Campaña de fidelización automatizada
+35,4,9.6,44,2,0,0,0.1535,BAJO,Monitoreo estándar
+64,9,12.7,18,0,1,0,0.0728,BAJO,Monitoreo estándar
+41,3,7.9,54,0,0,0,0.1426,BAJO,Monitoreo estándar
+43,9,16.8,99,0,0,0,0.1153,BAJO,Monitoreo estándar
+42,7,12.0,44,2,1,0,0.0698,BAJO,Monitoreo estándar
+62,4,6.2,7,2,0,0,0.1815,BAJO,Monitoreo estándar
+58,3,14.4,92,3,1,1,0.4438,MEDIO,Campaña de fidelización automatizada
+46,5,10.8,52,1,0,0,0.1534,BAJO,Monitoreo estándar
+32,5,10.9,54,3,0,0,0.6226,ALTO,Contacto prioritario + oferta de retención
+62,3,9.9,31,1,0,0,0.1467,BAJO,Monitoreo estándar
+18,9,10.2,50,2,0,0,0.4347,MEDIO,Campaña de fidelización automatizada
+42,4,15.4,43,2,0,0,0.1545,BAJO,Monitoreo estándar
+24,5,2.5,81,3,0,1,0.9012,ALTO,Contacto prioritario + oferta de retención
+26,4,7.0,69,4,1,1,0.7268,ALTO,Contacto prioritario + oferta de retención
+41,5,2.0,17,3,0,1,0.6087,ALTO,Contacto prioritario + oferta de retención
+18,7,15.2,82,1,0,0,0.3978,MEDIO,Campaña de fidelización automatizada
+61,9,5.8,21,3,0,1,0.5864,MEDIO,Campaña de fidelización automatizada
+25,7,18.0,36,0,0,1,0.3478,BAJO,Monitoreo estándar
+41,5,10.8,95,1,0,0,0.1075,BAJO,Monitoreo estándar
+28,7,16.1,55,1,0,0,0.2588,BAJO,Monitoreo estándar
+68,5,19.6,58,4,0,0,0.5492,MEDIO,Campaña de fidelización automatizada
+34,3,16.9,2,2,0,0,0.1655,BAJO,Monitoreo estándar
+25,7,17.4,27,1,0,0,0.3398,BAJO,Monitoreo estándar
+52,2,8.5,73,2,1,0,0.1465,BAJO,Monitoreo estándar
+52,9,11.3,34,3,0,0,0.5373,MEDIO,Campaña de fidelización automatizada
+50,1,5.5,60,0,0,1,0.6584,ALTO,Contacto prioritario + oferta de retención
+22,6,4.3,92,4,1,0,0.7193,ALTO,Contacto prioritario + oferta de retención
+59,7,10.4,53,2,0,0,0.1497,BAJO,Monitoreo estándar
+56,8,12.1,62,1,1,0,0.0749,BAJO,Monitoreo estándar
+58,9,7.1,78,2,0,0,0.1437,BAJO,Monitoreo estándar
+45,2,11.6,96,1,0,0,0.1611,BAJO,Monitoreo estándar
+24,2,17.8,6,2,0,1,0.5836,MEDIO,Campaña de fidelización automatizada
+26,5,11.4,75,1,0,0,0.299,BAJO,Monitoreo estándar
+25,5,14.6,48,3,1,0,0.6737,ALTO,Contacto prioritario + oferta de retención
+29,6,16.2,93,1,0,0,0.2324,BAJO,Monitoreo estándar
+51,3,19.8,84,1,1,0,0.0645,BAJO,Monitoreo estándar
+50,8,12.3,30,0,0,0,0.1835,BAJO,Monitoreo estándar
+65,1,16.2,57,1,0,1,0.591,MEDIO,Campaña de fidelización automatizada
+40,6,19.3,60,0,0,0,0.1372,BAJO,Monitoreo estándar
+41,4,18.9,23,4,0,0,0.4838,MEDIO,Campaña de fidelización automatizada
+54,1,3.3,19,0,0,1,0.6195,ALTO,Contacto prioritario + oferta de retención
+52,7,8.4,36,3,1,0,0.2489,BAJO,Monitoreo estándar
+61,9,6.8,3,0,1,0,0.0819,BAJO,Monitoreo estándar
+57,4,2.2,91,4,0,0,0.6439,ALTO,Contacto prioritario + oferta de retención
+39,4,12.8,19,3,1,0,0.2659,BAJO,Monitoreo estándar
+44,6,14.9,59,2,1,0,0.0654,BAJO,Monitoreo estándar
+52,3,17.0,23,2,1,0,0.0714,BAJO,Monitoreo estándar
+18,6,2.9,49,0,0,1,0.6684,ALTO,Contacto prioritario + oferta de retención
+52,7,17.6,48,0,1,0,0.0792,BAJO,Monitoreo estándar
+54,3,13.0,50,4,0,1,0.6151,ALTO,Contacto prioritario + oferta de retención
+64,7,14.2,95,4,1,0,0.4085,MEDIO,Campaña de fidelización automatizada
+31,3,18.3,35,1,0,0,0.1619,BAJO,Monitoreo estándar
+20,2,12.7,97,4,0,1,0.8906,ALTO,Contacto prioritario + oferta de retención
+18,4,7.0,99,1,1,0,0.2817,BAJO,Monitoreo estándar
+22,8,16.6,65,3,0,1,0.8746,ALTO,Contacto prioritario + oferta de retención
+43,9,7.6,78,0,1,0,0.0859,BAJO,Monitoreo estándar
+31,7,1.2,33,3,1,0,0.3094,BAJO,Monitoreo estándar
+56,1,16.7,35,4,1,1,0.7155,ALTO,Contacto prioritario + oferta de retención
+44,3,7.2,5,3,0,0,0.4905,MEDIO,Campaña de fidelización automatizada
+26,9,15.6,38,3,1,1,0.6442,ALTO,Contacto prioritario + oferta de retención
+32,1,7.6,41,3,0,1,0.8421,ALTO,Contacto prioritario + oferta de retención
+32,9,17.3,57,4,0,0,0.5878,MEDIO,Campaña de fidelización automatizada
+43,8,4.8,11,3,1,0,0.2343,BAJO,Monitoreo estándar
+59,1,19.5,2,1,0,0,0.473,MEDIO,Campaña de fidelización automatizada
+30,6,15.7,17,4,0,1,0.6208,ALTO,Contacto prioritario + oferta de retención
+68,5,2.7,39,3,1,0,0.2891,BAJO,Monitoreo estándar
+49,6,11.5,20,4,0,0,0.5418,MEDIO,Campaña de fidelización automatizada
+56,5,19.7,14,2,0,0,0.1675,BAJO,Monitoreo estándar
+66,6,9.7,96,1,1,0,0.0648,BAJO,Monitoreo estándar
+69,5,4.1,98,3,0,1,0.5902,MEDIO,Campaña de fidelización automatizada
+49,5,10.0,25,2,1,0,0.0639,BAJO,Monitoreo estándar
+21,4,10.5,7,2,1,0,0.2232,BAJO,Monitoreo estándar
+47,3,15.0,99,4,1,0,0.4377,MEDIO,Campaña de fidelización automatizada
+54,3,14.1,93,2,1,0,0.0795,BAJO,Monitoreo estándar
+40,4,8.3,86,1,0,0,0.1188,BAJO,Monitoreo estándar
+56,9,4.8,41,1,0,0,0.2248,BAJO,Monitoreo estándar
+62,2,13.1,43,0,1,0,0.1263,BAJO,Monitoreo estándar
+32,9,8.7,13,1,1,0,0.0709,BAJO,Monitoreo estándar
+60,1,3.1,77,2,0,1,0.6616,ALTO,Contacto prioritario + oferta de retención
+46,1,18.1,1,1,0,0,0.4676,MEDIO,Campaña de fidelización automatizada
+53,5,14.0,36,4,0,0,0.5035,MEDIO,Campaña de fidelización automatizada
+30,6,13.8,68,0,0,0,0.1827,BAJO,Monitoreo estándar
+49,6,16.5,37,2,1,0,0.0756,BAJO,Monitoreo estándar
+24,3,10.8,40,0,0,0,0.3736,MEDIO,Campaña de fidelización automatizada
+68,7,16.4,61,2,1,0,0.0774,BAJO,Monitoreo estándar
+39,9,10.2,59,4,1,0,0.3744,MEDIO,Campaña de fidelización automatizada
+45,8,1.8,13,0,0,0,0.4683,MEDIO,Campaña de fidelización automatizada
+19,6,8.4,88,3,1,1,0.7358,ALTO,Contacto prioritario + oferta de retención
+59,8,10.2,83,2,0,0,0.1406,BAJO,Monitoreo estándar
+62,5,14.5,1,3,0,1,0.5255,MEDIO,Campaña de fidelización automatizada
+23,8,2.6,69,0,1,1,0.5221,MEDIO,Campaña de fidelización automatizada
+45,4,3.2,16,3,1,0,0.2219,BAJO,Monitoreo estándar
+45,8,5.6,88,3,1,0,0.408,MEDIO,Campaña de fidelización automatizada
+61,2,5.7,27,0,0,0,0.2573,BAJO,Monitoreo estándar
+61,5,14.8,65,4,0,1,0.6268,ALTO,Contacto prioritario + oferta de retención
+37,9,5.4,34,3,1,0,0.296,BAJO,Monitoreo estándar
+47,4,12.8,4,3,0,0,0.4986,MEDIO,Campaña de fidelización automatizada
+28,6,10.1,64,4,0,0,0.7589,ALTO,Contacto prioritario + oferta de retención
+45,1,11.7,39,3,0,1,0.8009,ALTO,Contacto prioritario + oferta de retención
+42,9,16.8,75,3,1,0,0.3633,MEDIO,Campaña de fidelización automatizada
+56,1,8.4,55,3,0,1,0.8898,ALTO,Contacto prioritario + oferta de retención
+50,5,15.5,35,1,1,0,0.0791,BAJO,Monitoreo estándar
+18,4,8.7,44,4,1,1,0.7604,ALTO,Contacto prioritario + oferta de retención
+44,3,7.4,22,3,0,0,0.5141,MEDIO,Campaña de fidelización automatizada
+69,6,19.2,46,4,0,1,0.5618,MEDIO,Campaña de fidelización automatizada
+30,2,4.1,30,2,0,0,0.2984,BAJO,Monitoreo estándar
+58,3,2.3,10,2,1,0,0.2075,BAJO,Monitoreo estándar
+20,5,15.5,9,3,0,1,0.8217,ALTO,Contacto prioritario + oferta de retención
+56,9,1.8,66,4,0,1,0.6844,ALTO,Contacto prioritario + oferta de retención
+23,2,16.8,13,4,0,1,0.8848,ALTO,Contacto prioritario + oferta de retención
+25,8,9.0,79,4,1,0,0.6924,ALTO,Contacto prioritario + oferta de retención
+44,2,18.4,73,1,0,0,0.1687,BAJO,Monitoreo estándar
+26,5,14.6,92,2,1,0,0.2274,BAJO,Monitoreo estándar
+54,7,12.4,9,4,1,0,0.2485,BAJO,Monitoreo estándar
+50,8,19.0,75,4,0,1,0.56,MEDIO,Campaña de fidelización automatizada
+68,1,8.2,93,1,1,0,0.4398,MEDIO,Campaña de fidelización automatizada
+59,6,19.1,0,1,0,0,0.1779,BAJO,Monitoreo estándar
+61,1,3.1,4,4,1,0,0.5227,MEDIO,Campaña de fidelización automatizada
+41,2,9.9,19,0,1,0,0.1128,BAJO,Monitoreo estándar
+32,1,5.8,7,4,1,1,0.6362,ALTO,Contacto prioritario + oferta de retención
+49,5,11.0,42,4,0,0,0.5787,MEDIO,Campaña de fidelización automatizada
+49,9,3.7,75,1,0,0,0.2122,BAJO,Monitoreo estándar
+41,6,16.9,0,1,0,0,0.1708,BAJO,Monitoreo estándar
+58,1,17.0,56,4,0,1,0.9,ALTO,Contacto prioritario + oferta de retención
+69,1,19.1,63,4,0,1,0.8178,ALTO,Contacto prioritario + oferta de retención
+66,2,3.5,83,4,0,0,0.6655,ALTO,Contacto prioritario + oferta de retención
+66,9,12.7,27,1,0,0,0.1729,BAJO,Monitoreo estándar
+69,3,9.7,36,4,0,0,0.4874,MEDIO,Campaña de fidelización automatizada
+29,1,7.2,46,4,1,1,0.8262,ALTO,Contacto prioritario + oferta de retención
+56,5,7.4,75,3,0,0,0.5883,MEDIO,Campaña de fidelización automatizada
+19,7,8.5,36,0,0,0,0.376,MEDIO,Campaña de fidelización automatizada
+20,6,14.2,48,2,0,0,0.459,MEDIO,Campaña de fidelización automatizada
+66,1,12.2,43,0,0,0,0.6125,ALTO,Contacto prioritario + oferta de retención
+54,5,9.5,55,3,1,0,0.3655,MEDIO,Campaña de fidelización automatizada
+66,5,2.0,27,2,0,0,0.4105,MEDIO,Campaña de fidelización automatizada
+34,6,2.0,78,4,1,1,0.4172,MEDIO,Campaña de fidelización automatizada
+66,3,0.5,5,3,1,0,0.2231,BAJO,Monitoreo estándar
+19,5,19.4,60,4,1,0,0.6346,ALTO,Contacto prioritario + oferta de retención
+19,7,0.6,19,1,1,0,0.3995,MEDIO,Campaña de fidelización automatizada
+45,5,2.5,77,3,1,0,0.3871,MEDIO,Campaña de fidelización automatizada
+40,5,6.6,1,1,1,0,0.0904,BAJO,Monitoreo estándar
+54,5,16.2,72,3,1,0,0.3773,MEDIO,Campaña de fidelización automatizada
+49,3,19.3,36,3,0,0,0.4328,MEDIO,Campaña de fidelización automatizada
+50,1,15.9,19,1,1,1,0.4685,MEDIO,Campaña de fidelización automatizada
+18,5,14.0,25,2,0,0,0.3964,MEDIO,Campaña de fidelización automatizada
+36,9,10.7,28,0,1,0,0.0605,BAJO,Monitoreo estándar
+19,1,2.2,0,4,0,1,0.8414,ALTO,Contacto prioritario + oferta de retención
+61,3,19.2,34,3,0,0,0.4811,MEDIO,Campaña de fidelización automatizada
+43,4,15.3,69,4,0,1,0.6189,ALTO,Contacto prioritario + oferta de retención
+49,1,13.0,58,1,0,0,0.5824,MEDIO,Campaña de fidelización automatizada
+23,1,15.3,68,4,0,1,0.9668,ALTO,Contacto prioritario + oferta de retención
+49,8,14.6,32,1,0,0,0.18,BAJO,Monitoreo estándar
+21,2,12.9,50,4,0,1,0.9254,ALTO,Contacto prioritario + oferta de retención
+28,8,19.6,77,0,0,0,0.2649,BAJO,Monitoreo estándar
+34,7,18.1,11,0,1,0,0.0706,BAJO,Monitoreo estándar
+55,2,13.1,19,0,0,0,0.229,BAJO,Monitoreo estándar
+41,6,14.0,52,0,0,0,0.1507,BAJO,Monitoreo estándar
+22,6,1.5,87,0,1,0,0.451,MEDIO,Campaña de fidelización automatizada
+69,3,13.6,42,0,0,0,0.1665,BAJO,Monitoreo estándar
+51,2,1.4,97,1,0,0,0.3697,MEDIO,Campaña de fidelización automatizada
+23,1,12.0,88,3,1,1,0.8963,ALTO,Contacto prioritario + oferta de retención
+39,6,20.0,49,4,1,0,0.3218,BAJO,Monitoreo estándar
+28,5,11.3,28,0,0,0,0.2206,BAJO,Monitoreo estándar
+65,9,9.7,56,1,0,0,0.1535,BAJO,Monitoreo estándar
+33,1,6.6,38,1,1,0,0.4743,MEDIO,Campaña de fidelización automatizada
+50,7,2.9,94,1,1,0,0.202,BAJO,Monitoreo estándar
+26,5,14.8,55,3,0,1,0.8157,ALTO,Contacto prioritario + oferta de retención
+23,5,4.3,42,4,1,1,0.7361,ALTO,Contacto prioritario + oferta de retención
+33,2,2.7,49,3,0,1,0.7335,ALTO,Contacto prioritario + oferta de retención
+46,3,8.7,22,2,0,0,0.1549,BAJO,Monitoreo estándar
+20,7,16.0,43,1,0,0,0.4482,MEDIO,Campaña de fidelización automatizada
+37,6,15.0,37,2,1,0,0.0689,BAJO,Monitoreo estándar
+53,2,1.6,83,0,0,0,0.4153,MEDIO,Campaña de fidelización automatizada
+36,6,9.4,22,0,1,0,0.0546,BAJO,Monitoreo estándar
+43,2,10.7,44,3,0,0,0.6654,ALTO,Contacto prioritario + oferta de retención
+20,2,13.1,51,4,0,1,0.9254,ALTO,Contacto prioritario + oferta de retención
+36,2,13.2,79,2,0,0,0.194,BAJO,Monitoreo estándar
+37,3,7.6,49,4,1,0,0.4177,MEDIO,Campaña de fidelización automatizada
+49,2,11.4,7,3,0,1,0.6228,ALTO,Contacto prioritario + oferta de retención
+24,4,9.9,84,0,0,0,0.3174,BAJO,Monitoreo estándar
+69,9,17.8,0,4,1,0,0.2213,BAJO,Monitoreo estándar
+58,6,10.8,7,4,0,1,0.5378,MEDIO,Campaña de fidelización automatizada
+50,1,9.1,28,0,1,0,0.474,MEDIO,Campaña de fidelización automatizada
+57,8,8.4,95,2,0,0,0.1214,BAJO,Monitoreo estándar
+56,7,11.7,4,0,1,0,0.0696,BAJO,Monitoreo estándar
+35,3,16.2,85,4,0,1,0.6159,ALTO,Contacto prioritario + oferta de retención
+57,1,11.0,46,2,1,0,0.5,MEDIO,Campaña de fidelización automatizada
+18,5,13.4,33,2,0,0,0.4033,MEDIO,Campaña de fidelización automatizada
+28,4,14.9,64,0,0,0,0.2356,BAJO,Monitoreo estándar
+45,8,10.6,54,4,0,1,0.6155,ALTO,Contacto prioritario + oferta de retención
+42,1,8.8,89,3,0,1,0.8395,ALTO,Contacto prioritario + oferta de retención
+67,1,17.6,42,4,0,1,0.8368,ALTO,Contacto prioritario + oferta de retención
+40,4,8.6,73,1,1,0,0.0748,BAJO,Monitoreo estándar
+48,8,9.5,29,3,0,0,0.5371,MEDIO,Campaña de fidelización automatizada
+47,5,19.8,81,2,1,0,0.0678,BAJO,Monitoreo estándar
+59,2,0.5,16,3,1,0,0.3222,BAJO,Monitoreo estándar
+52,6,4.1,25,2,1,0,0.0746,BAJO,Monitoreo estándar
+24,5,8.0,7,2,0,0,0.3824,MEDIO,Campaña de fidelización automatizada
+33,2,18.7,46,3,0,0,0.6283,ALTO,Contacto prioritario + oferta de retención
+43,3,1.9,75,2,1,0,0.247,BAJO,Monitoreo estándar
+65,9,0.7,90,2,1,0,0.2493,BAJO,Monitoreo estándar
+69,7,1.5,71,1,0,1,0.4199,MEDIO,Campaña de fidelización automatizada
+66,7,2.2,88,4,0,1,0.6606,ALTO,Contacto prioritario + oferta de retención
+19,6,1.2,45,4,0,1,0.9161,ALTO,Contacto prioritario + oferta de retención
+18,8,9.9,67,1,1,0,0.3027,BAJO,Monitoreo estándar
+65,4,11.8,32,3,0,0,0.5159,MEDIO,Campaña de fidelización automatizada
+29,8,5.8,0,0,0,0,0.2972,BAJO,Monitoreo estándar
+22,4,8.3,18,0,1,0,0.2132,BAJO,Monitoreo estándar
+54,8,2.3,30,0,0,0,0.454,MEDIO,Campaña de fidelización automatizada
+49,9,7.1,79,1,0,0,0.1463,BAJO,Monitoreo estándar
+26,3,10.7,13,1,1,0,0.1727,BAJO,Monitoreo estándar
+58,3,14.8,52,2,1,0,0.0799,BAJO,Monitoreo estándar
+52,2,0.6,47,0,0,0,0.4544,MEDIO,Campaña de fidelización automatizada
+36,3,9.6,68,3,0,0,0.6026,ALTO,Contacto prioritario + oferta de retención
+65,3,6.3,89,3,0,0,0.5876,MEDIO,Campaña de fidelización automatizada
+33,5,17.1,61,0,0,0,0.1527,BAJO,Monitoreo estándar
+20,5,14.5,91,0,1,0,0.2756,BAJO,Monitoreo estándar
+37,2,12.0,65,0,0,0,0.1777,BAJO,Monitoreo estándar
+41,6,5.9,63,1,0,0,0.1518,BAJO,Monitoreo estándar
+50,5,18.3,69,1,0,0,0.151,BAJO,Monitoreo estándar
+41,6,1.4,62,1,0,0,0.408,MEDIO,Campaña de fidelización automatizada
+69,1,2.6,72,4,0,1,0.8697,ALTO,Contacto prioritario + oferta de retención
+28,5,8.1,32,3,1,1,0.602,ALTO,Contacto prioritario + oferta de retención
+66,9,2.9,40,3,0,0,0.5628,MEDIO,Campaña de fidelización automatizada
+25,2,19.2,88,2,1,0,0.3598,MEDIO,Campaña de fidelización automatizada
+53,1,16.1,47,1,1,0,0.4964,MEDIO,Campaña de fidelización automatizada
+55,9,5.6,12,4,0,0,0.573,MEDIO,Campaña de fidelización automatizada
+57,9,12.0,72,4,0,0,0.6082,ALTO,Contacto prioritario + oferta de retención
+37,9,19.7,76,3,0,0,0.5264,MEDIO,Campaña de fidelización automatizada
+52,6,17.7,30,1,0,0,0.1533,BAJO,Monitoreo estándar
+65,8,12.2,74,2,0,0,0.1524,BAJO,Monitoreo estándar
+42,1,18.1,67,1,0,0,0.5028,MEDIO,Campaña de fidelización automatizada
+52,4,19.8,97,0,0,0,0.104,BAJO,Monitoreo estándar
+42,1,15.0,3,1,1,0,0.3674,MEDIO,Campaña de fidelización automatizada
+46,8,1.8,18,0,0,1,0.4832,MEDIO,Campaña de fidelización automatizada
+35,1,8.3,69,0,1,0,0.4809,MEDIO,Campaña de fidelización automatizada
+63,3,16.8,97,2,0,0,0.1157,BAJO,Monitoreo estándar
+35,4,5.0,81,3,1,0,0.4115,MEDIO,Campaña de fidelización automatizada
+19,8,16.7,12,1,0,0,0.4312,MEDIO,Campaña de fidelización automatizada
+52,6,2.8,22,0,0,0,0.415,MEDIO,Campaña de fidelización automatizada
+33,7,1.4,82,1,1,0,0.2563,BAJO,Monitoreo estándar
+58,8,8.0,74,3,0,1,0.608,ALTO,Contacto prioritario + oferta de retención
+53,2,1.2,0,3,0,0,0.6049,ALTO,Contacto prioritario + oferta de retención
+50,8,19.2,87,4,1,1,0.3384,BAJO,Monitoreo estándar
+21,3,16.6,53,3,0,1,0.8866,ALTO,Contacto prioritario + oferta de retención
+50,7,16.1,70,2,0,0,0.1552,BAJO,Monitoreo estándar
+31,3,12.8,88,0,1,0,0.079,BAJO,Monitoreo estándar
+38,7,4.7,84,4,1,0,0.4129,MEDIO,Campaña de fidelización automatizada
+65,2,10.6,14,2,1,0,0.138,BAJO,Monitoreo estándar
+37,6,12.1,64,1,0,0,0.1382,BAJO,Monitoreo estándar
+25,3,10.7,75,0,1,0,0.243,BAJO,Monitoreo estándar
+24,3,5.6,70,3,0,1,0.8976,ALTO,Contacto prioritario + oferta de retención
+20,9,10.5,14,0,1,0,0.2287,BAJO,Monitoreo estándar
+34,7,10.1,20,1,1,0,0.064,BAJO,Monitoreo estándar
+50,5,19.9,18,4,1,0,0.2315,BAJO,Monitoreo estándar
+65,7,18.0,59,4,1,0,0.3085,BAJO,Monitoreo estándar
+29,9,9.5,92,4,0,1,0.7657,ALTO,Contacto prioritario + oferta de retención
+68,1,12.6,88,3,1,0,0.7497,ALTO,Contacto prioritario + oferta de retención
+39,7,15.1,32,2,1,0,0.0682,BAJO,Monitoreo estándar
+39,6,1.2,48,2,0,0,0.4305,MEDIO,Campaña de fidelización automatizada
+63,9,18.0,95,0,1,0,0.0585,BAJO,Monitoreo estándar
+47,1,17.3,34,3,0,1,0.818,ALTO,Contacto prioritario + oferta de retención
+55,4,9.4,43,4,1,0,0.3701,MEDIO,Campaña de fidelización automatizada
+55,9,8.1,89,4,1,0,0.4109,MEDIO,Campaña de fidelización automatizada
+62,4,5.8,10,1,1,0,0.0853,BAJO,Monitoreo estándar
+68,3,9.8,98,1,0,0,0.1059,BAJO,Monitoreo estándar
+25,9,1.4,71,4,0,1,0.859,ALTO,Contacto prioritario + oferta de retención
+44,2,17.1,77,4,0,0,0.6632,ALTO,Contacto prioritario + oferta de retención
+44,4,1.2,73,3,1,0,0.3771,MEDIO,Campaña de fidelización automatizada
+51,6,6.9,65,2,0,0,0.1483,BAJO,Monitoreo estándar
+38,2,18.7,45,1,0,0,0.1845,BAJO,Monitoreo estándar
+47,8,14.8,8,2,1,0,0.0682,BAJO,Monitoreo estándar
+50,8,6.0,2,3,0,0,0.5332,MEDIO,Campaña de fidelización automatizada
+45,1,5.4,84,4,1,1,0.7834,ALTO,Contacto prioritario + oferta de retención
+64,3,0.6,25,2,1,0,0.2609,BAJO,Monitoreo estándar
+50,9,14.1,71,4,1,0,0.3791,MEDIO,Campaña de fidelización automatizada
+22,5,1.5,47,4,0,1,0.9188,ALTO,Contacto prioritario + oferta de retención
+65,6,10.9,65,0,0,0,0.1508,BAJO,Monitoreo estándar
+36,4,19.3,69,2,0,0,0.1351,BAJO,Monitoreo estándar
+21,2,2.6,27,2,0,0,0.7237,ALTO,Contacto prioritario + oferta de retención
+52,8,17.9,92,4,0,0,0.5536,MEDIO,Campaña de fidelización automatizada
+66,6,19.8,25,3,0,0,0.4651,MEDIO,Campaña de fidelización automatizada
+34,5,1.7,24,0,1,0,0.2543,BAJO,Monitoreo estándar
+61,9,17.7,11,4,1,0,0.2211,BAJO,Monitoreo estándar
+45,1,10.6,4,1,0,0,0.4861,MEDIO,Campaña de fidelización automatizada
+47,5,18.2,97,1,1,0,0.0583,BAJO,Monitoreo estándar
+46,6,11.6,47,0,1,0,0.0777,BAJO,Monitoreo estándar
+63,5,13.4,36,3,1,0,0.2735,BAJO,Monitoreo estándar
+23,6,11.1,78,4,1,1,0.7614,ALTO,Contacto prioritario + oferta de retención
+52,6,17.4,43,2,0,0,0.1571,BAJO,Monitoreo estándar
+58,7,14.8,99,0,0,0,0.1177,BAJO,Monitoreo estándar
+54,4,10.7,14,3,0,0,0.5085,MEDIO,Campaña de fidelización automatizada
+41,8,17.4,42,2,0,0,0.1563,BAJO,Monitoreo estándar
+46,7,5.3,47,1,1,0,0.1103,BAJO,Monitoreo estándar
+66,9,3.6,86,1,1,0,0.092,BAJO,Monitoreo estándar
+63,7,3.6,69,2,0,0,0.213,BAJO,Monitoreo estándar
+48,3,7.0,45,0,0,0,0.165,BAJO,Monitoreo estándar
+52,3,5.2,42,1,1,0,0.0994,BAJO,Monitoreo estándar
+50,8,18.6,20,4,0,1,0.5228,MEDIO,Campaña de fidelización automatizada
+69,5,2.6,22,2,0,0,0.4043,MEDIO,Campaña de fidelización automatizada
+38,4,14.1,79,2,1,0,0.0873,BAJO,Monitoreo estándar
+49,8,4.2,46,1,0,0,0.2257,BAJO,Monitoreo estándar
+40,6,17.7,14,0,0,0,0.1693,BAJO,Monitoreo estándar
+50,2,19.2,24,4,0,0,0.5568,MEDIO,Campaña de fidelización automatizada
+20,4,9.6,35,0,1,0,0.2158,BAJO,Monitoreo estándar
+35,4,17.6,74,3,0,0,0.5622,MEDIO,Campaña de fidelización automatizada
+42,6,0.6,50,3,0,0,0.6756,ALTO,Contacto prioritario + oferta de retención
+59,6,16.5,14,1,0,0,0.173,BAJO,Monitoreo estándar
+48,1,5.0,67,1,0,0,0.602,ALTO,Contacto prioritario + oferta de retención
+20,8,18.2,20,1,0,1,0.4427,MEDIO,Campaña de fidelización automatizada
+57,6,0.5,12,3,1,1,0.2553,BAJO,Monitoreo estándar
+63,3,11.3,85,0,0,0,0.1271,BAJO,Monitoreo estándar
+41,9,15.3,18,0,1,0,0.0657,BAJO,Monitoreo estándar
+67,2,5.5,33,1,0,0,0.2601,BAJO,Monitoreo estándar
+49,8,4.3,77,4,0,1,0.6511,ALTO,Contacto prioritario + oferta de retención
+64,3,2.1,67,0,0,0,0.3793,MEDIO,Campaña de fidelización automatizada
+39,5,6.9,51,3,0,0,0.6118,ALTO,Contacto prioritario + oferta de retención
+40,6,11.4,26,2,0,0,0.1477,BAJO,Monitoreo estándar
+19,6,2.8,28,2,0,1,0.6176,ALTO,Contacto prioritario + oferta de retención
+44,4,7.8,27,2,0,0,0.1441,BAJO,Monitoreo estándar
+59,3,0.7,34,4,1,0,0.2976,BAJO,Monitoreo estándar
+19,4,16.5,7,1,0,0,0.4108,MEDIO,Campaña de fidelización automatizada
+43,1,3.0,15,3,1,0,0.5568,MEDIO,Campaña de fidelización automatizada
+34,4,6.0,35,4,1,0,0.3218,BAJO,Monitoreo estándar
+57,1,0.9,29,3,0,1,0.8242,ALTO,Contacto prioritario + oferta de retención
+50,1,8.9,17,3,0,1,0.7988,ALTO,Contacto prioritario + oferta de retención
+26,6,16.9,1,1,0,0,0.32,BAJO,Monitoreo estándar
+60,5,8.1,48,2,0,0,0.1547,BAJO,Monitoreo estándar
+65,4,4.0,76,1,0,0,0.1931,BAJO,Monitoreo estándar
+56,3,15.2,3,4,1,0,0.2478,BAJO,Monitoreo estándar
+46,1,15.9,89,4,0,1,0.8713,ALTO,Contacto prioritario + oferta de retención
+59,6,3.9,88,4,0,1,0.6393,ALTO,Contacto prioritario + oferta de retención
+43,2,15.5,93,1,1,0,0.114,BAJO,Monitoreo estándar
+52,8,19.0,74,3,0,0,0.5461,MEDIO,Campaña de fidelización automatizada
+67,5,3.7,6,3,1,0,0.2022,BAJO,Monitoreo estándar
+42,7,15.5,94,0,0,0,0.1209,BAJO,Monitoreo estándar
+41,2,14.3,73,4,0,1,0.695,ALTO,Contacto prioritario + oferta de retención
+30,8,9.7,38,3,0,0,0.5894,MEDIO,Campaña de fidelización automatizada
+24,2,1.6,12,0,0,1,0.7301,ALTO,Contacto prioritario + oferta de retención
+53,4,2.0,30,3,1,0,0.2554,BAJO,Monitoreo estándar
+62,1,17.1,70,4,0,1,0.8838,ALTO,Contacto prioritario + oferta de retención
+37,5,19.8,62,2,1,0,0.0668,BAJO,Monitoreo estándar
+18,9,13.7,55,4,0,1,0.8719,ALTO,Contacto prioritario + oferta de retención
+25,1,9.2,41,1,0,1,0.7444,ALTO,Contacto prioritario + oferta de retención
+63,9,13.1,60,3,0,0,0.6153,ALTO,Contacto prioritario + oferta de retención
+33,8,12.1,41,3,0,0,0.5568,MEDIO,Campaña de fidelización automatizada
+31,6,8.0,55,1,1,0,0.0926,BAJO,Monitoreo estándar
+29,7,1.8,35,1,0,0,0.4652,MEDIO,Campaña de fidelización automatizada
+68,3,16.5,83,2,0,0,0.1386,BAJO,Monitoreo estándar
+40,1,7.8,67,3,0,1,0.8556,ALTO,Contacto prioritario + oferta de retención
+32,5,16.5,6,3,0,0,0.5178,MEDIO,Campaña de fidelización automatizada
+45,2,5.4,53,2,0,0,0.2603,BAJO,Monitoreo estándar
+51,5,0.5,0,0,0,1,0.4918,MEDIO,Campaña de fidelización automatizada
+19,8,3.6,43,2,1,0,0.3323,BAJO,Monitoreo estándar
+49,9,9.6,44,4,0,1,0.6009,ALTO,Contacto prioritario + oferta de retención
+40,2,18.9,46,3,0,1,0.612,ALTO,Contacto prioritario + oferta de retención
+39,3,2.5,12,1,0,0,0.3835,MEDIO,Campaña de fidelización automatizada
+68,3,17.2,21,4,0,0,0.4977,MEDIO,Campaña de fidelización automatizada
+42,1,10.8,20,3,1,0,0.6253,ALTO,Contacto prioritario + oferta de retención
+39,8,16.6,85,2,0,0,0.1273,BAJO,Monitoreo estándar
+39,6,6.3,91,4,0,0,0.6075,ALTO,Contacto prioritario + oferta de retención
+66,8,16.9,8,3,1,0,0.2194,BAJO,Monitoreo estándar
+69,9,15.6,25,0,0,0,0.1766,BAJO,Monitoreo estándar
+59,5,5.0,8,0,0,0,0.2315,BAJO,Monitoreo estándar
+23,3,3.1,14,1,1,0,0.3067,BAJO,Monitoreo estándar
+32,5,17.4,9,3,1,0,0.2713,BAJO,Monitoreo estándar
+60,5,19.3,87,0,1,0,0.0572,BAJO,Monitoreo estándar
+54,5,1.1,41,2,0,1,0.4761,MEDIO,Campaña de fidelización automatizada
+50,3,14.8,71,3,0,0,0.6042,ALTO,Contacto prioritario + oferta de retención
+25,4,18.2,23,2,0,1,0.3219,BAJO,Monitoreo estándar
+61,9,17.2,79,2,0,0,0.1478,BAJO,Monitoreo estándar
+61,9,19.3,48,0,1,0,0.0744,BAJO,Monitoreo estándar
+22,2,15.3,25,3,0,1,0.8952,ALTO,Contacto prioritario + oferta de retención
+56,8,9.1,90,4,1,1,0.4063,MEDIO,Campaña de fidelización automatizada
+21,8,6.6,36,0,1,0,0.2628,BAJO,Monitoreo estándar
+23,7,6.8,67,0,0,0,0.3989,MEDIO,Campaña de fidelización automatizada
+62,8,14.6,49,3,0,1,0.6328,ALTO,Contacto prioritario + oferta de retención
+49,3,15.0,23,3,1,0,0.2723,BAJO,Monitoreo estándar
+69,6,4.4,18,2,0,0,0.2274,BAJO,Monitoreo estándar
+47,1,17.4,99,3,1,1,0.7632,ALTO,Contacto prioritario + oferta de retención
+64,7,14.4,59,2,0,0,0.1558,BAJO,Monitoreo estándar
+52,1,11.5,38,0,0,1,0.6184,ALTO,Contacto prioritario + oferta de retención
+57,9,9.7,73,1,0,0,0.1442,BAJO,Monitoreo estándar
+69,1,11.1,88,4,1,1,0.7675,ALTO,Contacto prioritario + oferta de retención
+33,1,3.6,17,0,0,0,0.561,MEDIO,Campaña de fidelización automatizada
+30,7,4.5,18,3,1,0,0.3334,BAJO,Monitoreo estándar
+67,2,2.3,35,4,0,1,0.6292,ALTO,Contacto prioritario + oferta de retención
+59,5,3.5,73,1,1,0,0.1002,BAJO,Monitoreo estándar
+47,8,9.3,96,1,1,0,0.0694,BAJO,Monitoreo estándar
+36,8,10.8,54,2,0,0,0.1476,BAJO,Monitoreo estándar
+34,3,0.8,68,4,0,1,0.6891,ALTO,Contacto prioritario + oferta de retención
+36,7,16.0,46,2,1,0,0.0794,BAJO,Monitoreo estándar
+45,3,6.2,48,0,0,0,0.1801,BAJO,Monitoreo estándar
+43,6,18.3,98,4,1,0,0.3429,BAJO,Monitoreo estándar
+54,6,19.4,97,0,0,0,0.107,BAJO,Monitoreo estándar
+43,3,4.1,32,2,1,0,0.0766,BAJO,Monitoreo estándar
+40,7,9.5,20,4,1,0,0.2544,BAJO,Monitoreo estándar
+26,3,0.5,80,2,1,1,0.4716,MEDIO,Campaña de fidelización automatizada
+29,8,12.2,21,4,0,1,0.7479,ALTO,Contacto prioritario + oferta de retención
+18,4,12.3,47,2,0,0,0.4179,MEDIO,Campaña de fidelización automatizada
+18,1,5.3,36,1,0,1,0.7709,ALTO,Contacto prioritario + oferta de retención
+64,4,11.4,14,2,0,0,0.1643,BAJO,Monitoreo estándar
+51,7,4.9,34,1,0,0,0.2179,BAJO,Monitoreo estándar
+49,4,3.6,91,2,0,0,0.1927,BAJO,Monitoreo estándar
+65,6,13.2,70,4,1,0,0.3758,MEDIO,Campaña de fidelización automatizada
+42,9,6.9,31,4,0,0,0.5568,MEDIO,Campaña de fidelización automatizada
+57,1,12.0,10,4,0,1,0.8331,ALTO,Contacto prioritario + oferta de retención
+62,5,8.9,9,3,1,0,0.2502,BAJO,Monitoreo estándar
+18,7,19.7,72,0,0,0,0.4187,MEDIO,Campaña de fidelización automatizada
