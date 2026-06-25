@@ -15,6 +15,9 @@ venv/
 .vscode/
 .idea/
 
+# Contexto local para asistentes de IA (no versionar)
+CLAUDE.md
+
 # Logs
 IA_Proyecto/logs/*.log
 nexora-ml/logs/*.log
