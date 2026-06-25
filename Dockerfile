@@ -1,33 +1,31 @@
-# NEXORA · Pipeline DataOps + IA
-# Python 3.11 (Microsoft devcontainer base) — compatible con nube y local
-FROM mcr.microsoft.com/devcontainers/python:3.11
+# NEXORA · Servicio de Inteligencia Predictiva (FastAPI) + Pipeline DataOps
+# Imagen ligera para Render Web Service — compatible con nube y local.
+FROM python:3.11-slim
 
-# Evitar que Python escriba .pyc y forcé salida sin buffer
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+# Evitar .pyc y forzar salida sin buffer (logs en tiempo real en Render).
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PORT=8000
 
-# Establecer directorio de trabajo
-WORKDIR /workspace
+WORKDIR /app
 
-# Copiar archivos de dependencias primero (caching)
+# Copiar archivos de dependencias primero (aprovecha la caché de capas).
 COPY requirements.txt .
 COPY nexora-ml/requirements.txt nexora-ml/requirements.txt
 
-# Instalar dependencias unificadas del pipeline + módulo IA
-RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install --upgrade pip && \
-    pip install -r requirements.txt && \
-    pip install -r nexora-ml/requirements.txt && \
-    rm -rf /tmp/*
+# Instalar dependencias del pipeline + módulo IA + API.
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt && \
+    pip install --no-cache-dir -r nexora-ml/requirements.txt
 
-# Copiar el resto del código
+# Copiar el resto del código.
 COPY . .
 
-# Crear directorios de logs si no existen
-RUN mkdir -p IA_Proyecto/logs nexora-ml/logs
+# Crear directorios de logs/artefactos si no existen.
+RUN mkdir -p IA_Proyecto/logs nexora-ml/logs nexora-ml/models nexora-ml/reports
 
-# Puerto para Streamlit dashboard (opcional)
-EXPOSE 8501
+# Puerto del servicio web (Render inyecta $PORT en tiempo de ejecución).
+EXPOSE 8000
 
-# Comando por defecto: ejecutar el pipeline
-CMD ["python", "pipeline.py"]
+# Levantar la API. ${PORT:-8000} permite local (8000) y Render (puerto dinámico).
+CMD ["sh", "-c", "uvicorn api.main:app --host 0.0.0.0 --port ${PORT:-8000}"]

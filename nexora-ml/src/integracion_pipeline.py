@@ -67,6 +67,40 @@ def segmentar_riesgo(proba: float) -> str:
     return "BAJO"
 
 
+_ACCIONES_RETENCION = {
+    "ALTO": "Contacto prioritario + oferta de retención",
+    "MEDIO": "Campaña de fidelización automatizada",
+    "BAJO": "Monitoreo estándar",
+}
+
+
+def puntuar_dataframe(df: pd.DataFrame, paquete: dict | None = None) -> pd.DataFrame:
+    """
+    Aplica el modelo entrenado a un DataFrame y devuelve una copia enriquecida
+    con ``prob_abandono``, ``segmento_riesgo`` y ``accion_retencion``.
+
+    Función de scoring reutilizable: la usa tanto la etapa batch del pipeline
+    (``ejecutar_scoring``) como el endpoint online ``POST /score`` de la API,
+    de modo que la lógica de predicción vive en un único lugar.
+    """
+    paquete = paquete or cargar_modelo()
+    columnas = paquete["columnas"]
+    faltantes = [c for c in columnas if c not in df.columns]
+    if faltantes:
+        raise ValueError(f"Faltan columnas requeridas por el modelo: {faltantes}")
+
+    X = df[columnas]
+    if paquete.get("requiere_escalado"):
+        X = paquete["scaler"].transform(X)
+    proba = paquete["modelo"].predict_proba(X)[:, 1]
+
+    resultado = df.copy()
+    resultado["prob_abandono"] = proba.round(4)
+    resultado["segmento_riesgo"] = [segmentar_riesgo(p) for p in proba]
+    resultado["accion_retencion"] = resultado["segmento_riesgo"].map(_ACCIONES_RETENCION)
+    return resultado
+
+
 def ejecutar_scoring(almacen_datos: dict | None = None) -> dict:
     """
     Nueva etapa del pipeline DataOps: aplica el modelo de IA sobre la cartera
@@ -95,22 +129,9 @@ def ejecutar_scoring(almacen_datos: dict | None = None) -> dict:
         logger.warning(f"Se detectaron {calidad['total_nulos']} nulos; se imputan.")
     cartera = prep.imputar_nulos(cartera)
 
-    # 3. Scoring con el modelo entrenado
+    # 3. Scoring con el modelo entrenado (lógica centralizada y reutilizable)
     paquete = cargar_modelo()
-    columnas = paquete["columnas"]
-    X = cartera[columnas]
-    if paquete.get("requiere_escalado"):
-        X = paquete["scaler"].transform(X)
-    proba = paquete["modelo"].predict_proba(X)[:, 1]
-
-    cartera_scored = cartera.copy()
-    cartera_scored["prob_abandono"] = proba.round(4)
-    cartera_scored["segmento_riesgo"] = [segmentar_riesgo(p) for p in proba]
-    cartera_scored["accion_retencion"] = cartera_scored["segmento_riesgo"].map({
-        "ALTO": "Contacto prioritario + oferta de retención",
-        "MEDIO": "Campaña de fidelización automatizada",
-        "BAJO": "Monitoreo estándar",
-    })
+    cartera_scored = puntuar_dataframe(cartera, paquete)
 
     # 4. Resumen de segmentación
     resumen = cartera_scored["segmento_riesgo"].value_counts().to_dict()
@@ -120,6 +141,16 @@ def ejecutar_scoring(almacen_datos: dict | None = None) -> dict:
     ruta_salida = DIR_PROC / "clientes_scoreados.csv"
     cartera_scored.to_csv(ruta_salida, index=False, encoding="utf-8")
     logger.info(f"Resultado scoreado persistido en {ruta_salida}")
+
+    # 5b. Persistencia centralizada: exporta a reports/ (JSON+CSV) y, si hay
+    #     base de datos configurada, a la tabla Neon ml_predicciones.
+    try:
+        import persistencia
+
+        destinos = persistencia.guardar_predicciones(cartera_scored)
+        logger.info(f"Predicciones centralizadas en reports/ (BD={destinos['base_datos']})")
+    except Exception as exc:  # noqa: BLE001 — la persistencia es best-effort
+        logger.warning(f"No se pudo centralizar predicciones en reports/BD: {exc}")
 
     dur = time.perf_counter() - t0
     logger.info(f"Etapa de SCORING IA · fin ({dur:.3f}s, modelo={paquete['nombre_modelo']})")

@@ -26,7 +26,7 @@
       "f1": 0.6071,
       "roc_auc": 0.8176,
       "gini": 0.6352,
-      "tiempo_entrenamiento_s": 0.0048,
+      "tiempo_entrenamiento_s": 0.0069,
       "escalado": true
     },
     "Árbol de Decisión": {
@@ -36,7 +36,7 @@
       "f1": 0.6,
       "roc_auc": 0.7869,
       "gini": 0.5739,
-      "tiempo_entrenamiento_s": 0.0029,
+      "tiempo_entrenamiento_s": 0.0033,
       "escalado": false
     },
     "Random Forest": {
@@ -46,7 +46,7 @@
       "f1": 0.6296,
       "roc_auc": 0.8651,
       "gini": 0.7301,
-      "tiempo_entrenamiento_s": 0.2085,
+      "tiempo_entrenamiento_s": 0.2165,
       "escalado": false
     },
     "Gradient Boosting": {
@@ -56,7 +56,7 @@
       "f1": 0.5238,
       "roc_auc": 0.8443,
       "gini": 0.6885,
-      "tiempo_entrenamiento_s": 0.1225,
+      "tiempo_entrenamiento_s": 0.1389,
       "escalado": false
     },
     "Random Forest (optimizado)": {
@@ -78,5 +78,5 @@
     "reclamos": 0.3203,
     "plan_premium": 0.1015
   },
-  "tiempo_total_s": 43.358
+  "tiempo_total_s": 44.371
 }
