@@ -5,6 +5,12 @@ la plataforma NEXORA. Combina un **pipeline DataOps batch** (ingesta → procesa
 → validación → scoring IA → carga Neon) con una **API REST (FastAPI)** desplegable
 en **Render**, manteniendo intacta la ejecución local/cron.
 
+Soporta **dos modos de ejecución**:
+
+- **Cron batch (producción):** `python cron_job.py` — entrena, puntúa, persiste y
+  termina (ideal para **Render Cron Job**). No levanta servidor HTTP.
+- **API (demo técnica):** `uvicorn api.main:app` — expone los endpoints REST.
+
 > Evaluación Parcial 3 · ITY1101 Gestión de Datos para IA · DUOC UC
 
 ---
@@ -13,6 +19,7 @@ en **Render**, manteniendo intacta la ejecución local/cron.
 
 ```
 EntrenamientoAI/
+├── cron_job.py             # Flujo batch para Render Cron Job (train→score→persist→exit)
 ├── api/main.py              # API REST FastAPI (servicio web · Render)
 ├── pipeline.py              # Pipeline DataOps batch (python pipeline.py · cron/local)
 ├── ingestion/              # Ingesta multi-fuente (CSV, batch, tiempo real)
@@ -66,7 +73,18 @@ cp .env.example .env          # Windows: copy .env.example .env
 # Edita .env con tu DATABASE_URL (Neon) si vas a usar carga/persistencia en BD.
 ```
 
-### 3a. Pipeline batch (DataOps completo · cron/local)
+### 3a. Cron Job batch (flujo de IA · recomendado para producción)
+
+```bash
+python cron_job.py
+```
+
+Entrena el modelo, persiste métricas, hace scoring batch de la cartera y persiste
+predicciones; luego **termina** con código `0` (éxito) o `1` (fallo). No levanta
+servidor. Escribe siempre en `nexora-ml/reports` y, si hay `DATABASE_URL`, también
+en Neon. Es el comando que ejecuta el **Render Cron Job** (ver más abajo).
+
+### 3b. Pipeline DataOps completo (cron/local)
 
 ```bash
 python pipeline.py
@@ -75,14 +93,14 @@ python pipeline.py
 Ejecuta ingesta → transformación → validación → scoring IA → seudonimización →
 carga Neon → KPIs. **Requiere `DATABASE_URL`** (la etapa de carga escribe en Neon).
 
-### 3b. Entrenamiento / scoring aislados (sin BD)
+### 3c. Entrenamiento / scoring aislados (sin BD)
 
 ```bash
 python nexora-ml/src/entrenamiento.py        # entrena y genera reports/figures
 python nexora-ml/src/integracion_pipeline.py # scoring de la cartera
 ```
 
-### 3c. API REST (servicio web)
+### 3d. API REST (servicio web · demo técnica)
 
 ```bash
 uvicorn api.main:app --reload --port 8000
@@ -90,7 +108,7 @@ uvicorn api.main:app --reload --port 8000
 
 Docs interactivas (Swagger): <http://localhost:8000/docs>
 
-### 3d. Dashboard BI (Streamlit)
+### 3e. Dashboard BI (Streamlit)
 
 ```bash
 streamlit run nexora-ml/dashboard/app.py
@@ -114,7 +132,50 @@ con Render, que inyecta `$PORT`).
 
 ---
 
+## Despliegue en Render (Cron Job)
+
+Modo recomendado para la **producción académica**: ejecuta el flujo de IA de forma
+programada, deja evidencia en logs y termina. No mantiene ningún servidor activo.
+
+1. **New → Cron Job** y conecta este repositorio.
+2. **Runtime:** `Python 3`.
+3. **Build Command:**
+
+   ```bash
+   pip install -r requirements.txt && pip install -r nexora-ml/requirements.txt
+   ```
+
+4. **Command (Cron Command):**
+
+   ```bash
+   python cron_job.py
+   ```
+
+5. **Schedule:** diaria (p. ej. `0 6 * * *` = 06:00 UTC) o **manual con “Trigger Run”**.
+6. **Variables de entorno** (Settings → Environment):
+
+   | Variable       | Descripción                                                       |
+   |----------------|-------------------------------------------------------------------|
+   | `DATABASE_URL` | Conexión Neon (PostgreSQL). Opcional: sin ella persiste a `reports/`. |
+   | `ENVIRONMENT`  | `render` / `production`.                                           |
+   | `NEXORA_SALT`  | Sal del hash SHA-256 para seudonimización.                        |
+
+   > El cron **no** usa `ML_API_KEY` (es exclusiva del modo API). Tampoco definas
+   > `PORT`: este modo no abre puertos.
+
+7. **Evidencia:** la corrida registra inicio, duración de entrenamiento y scoring,
+   modelo seleccionado, métricas, número de predicciones y si se guardó en Neon
+   (en los logs de Render y en `nexora-ml/logs/cron.log`). El proceso termina con
+   código `0` si todo salió bien, o `1` si falló (Render marca la corrida en rojo).
+
+> Alternativa con Docker: el mismo `Dockerfile` sirve para el Cron Job; basta con
+> sobreescribir el comando a `python cron_job.py` en la configuración del servicio.
+
+---
+
 ## Despliegue en Render (Web Service)
+
+Modo para la **demo técnica** (API REST en vivo con Swagger).
 
 1. **New → Web Service** y conecta este repositorio.
 2. **Environment:** `Docker` (Render detecta el `Dockerfile`).

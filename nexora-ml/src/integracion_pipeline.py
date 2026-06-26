@@ -101,13 +101,18 @@ def puntuar_dataframe(df: pd.DataFrame, paquete: dict | None = None) -> pd.DataF
     return resultado
 
 
-def ejecutar_scoring(almacen_datos: dict | None = None) -> dict:
+def ejecutar_scoring(almacen_datos: dict | None = None, persistir: bool = True) -> dict:
     """
     Nueva etapa del pipeline DataOps: aplica el modelo de IA sobre la cartera
     de clientes y devuelve el almacén de datos enriquecido con el scoring.
 
     Acepta el mismo patrón 'almacen_datos' (dict de DataFrames) del pipeline
     del Parcial 2, de modo que puede insertarse en pipeline.py sin fricción.
+
+    ``persistir``: si es True (por defecto) centraliza las predicciones en
+    reports/ y Neon. El cron job lo invoca con ``persistir=False`` porque él
+    mismo es el dueño de la persistencia (llama a guardar_predicciones), para
+    no insertar dos veces en la base de datos en una misma ejecución.
     """
     t0 = time.perf_counter()
     logger.info("=" * 60)
@@ -144,13 +149,14 @@ def ejecutar_scoring(almacen_datos: dict | None = None) -> dict:
 
     # 5b. Persistencia centralizada: exporta a reports/ (JSON+CSV) y, si hay
     #     base de datos configurada, a la tabla Neon ml_predicciones.
-    try:
-        import persistencia
+    if persistir:
+        try:
+            import persistencia
 
-        destinos = persistencia.guardar_predicciones(cartera_scored)
-        logger.info(f"Predicciones centralizadas en reports/ (BD={destinos['base_datos']})")
-    except Exception as exc:  # noqa: BLE001 — la persistencia es best-effort
-        logger.warning(f"No se pudo centralizar predicciones en reports/BD: {exc}")
+            destinos = persistencia.guardar_predicciones(cartera_scored)
+            logger.info(f"Predicciones centralizadas en reports/ (BD={destinos['base_datos']})")
+        except Exception as exc:  # noqa: BLE001 — la persistencia es best-effort
+            logger.warning(f"No se pudo centralizar predicciones en reports/BD: {exc}")
 
     dur = time.perf_counter() - t0
     logger.info(f"Etapa de SCORING IA · fin ({dur:.3f}s, modelo={paquete['nombre_modelo']})")
