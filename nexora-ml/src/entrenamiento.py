@@ -31,6 +31,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
     classification_report,
+    confusion_matrix,
     f1_score,
     precision_score,
     recall_score,
@@ -223,6 +224,9 @@ def main() -> dict:
         "criterio_seleccion": "Máximo Recall (coste de falso negativo alto), desempate por F1",
         "hiperparametros_optimizados": mejores_params,
         "recall_cv5_optimizado": mejor_cv,
+        "matriz_confusion": confusion_matrix(
+            datos["y_test"], resultados[mejor_nombre]["y_pred"]
+        ).tolist(),
         "calidad_datos": {
             "n_filas": calidad["n_filas"],
             "n_columnas": calidad["n_columnas"],

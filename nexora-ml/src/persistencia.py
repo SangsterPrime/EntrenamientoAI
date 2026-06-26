@@ -40,6 +40,7 @@ RUTA_PREDICCIONES_CSV = DIR_REPORTS / "predicciones.csv"
 RUTA_SCOREADOS = DIR_DATA / "clientes_scoreados.csv"
 
 logger = logging.getLogger("nexora.persistencia")
+_ULTIMO_ERROR_BD: str | None = None
 
 
 # --- Resolución de la base de datos (delegada al punto único del proyecto) ---
@@ -66,8 +67,14 @@ def resolver_database_url() -> str | None:
 
 def _conectar():
     """Devuelve una conexión psycopg2 o None si no hay BD configurada/disponible."""
+    global _ULTIMO_ERROR_BD
+    _ULTIMO_ERROR_BD = None
     url = resolver_database_url()
     if not url:
+        logger.info(
+            "Neon no configurado: DATABASE_URL/DB_URL/NEON_DATABASE_URL ausente; "
+            "se persiste solo en reports/."
+        )
         return None
     try:
         import psycopg2
@@ -76,7 +83,8 @@ def _conectar():
         conn.autocommit = False
         return conn
     except Exception as exc:  # noqa: BLE001
-        logger.warning("No se pudo conectar a la base de datos: %s", exc)
+        _ULTIMO_ERROR_BD = str(exc)
+        logger.warning("Neon configurado, pero falló la conexión PostgreSQL: %s", exc)
         return None
 
 
@@ -90,8 +98,8 @@ def guardar_metricas(metricas: dict) -> dict:
     Persiste el resumen de métricas del entrenamiento.
 
     Siempre escribe ``reports/metricas.json``. Si hay BD configurada, además
-    inserta una fila en la tabla ``ml_metricas`` (con el JSON completo en una
-    columna ``payload`` y las métricas clave del modelo seleccionado).
+    inserta una fila en la tabla ``ml_metricas`` usando el esquema consumido por
+    ``nexora-backend``.
 
     Devuelve un dict con el detalle de los destinos efectivamente usados.
     """
@@ -103,53 +111,61 @@ def guardar_metricas(metricas: dict) -> dict:
 
     conn = _conectar()
     if conn is None:
+        if _ULTIMO_ERROR_BD:
+            destinos["error_base_datos"] = _ULTIMO_ERROR_BD
         return destinos
     try:
         seleccionado = metricas.get("modelo_seleccionado", "")
         met = metricas.get("metricas_por_modelo", {}).get(seleccionado, {})
+        matriz_confusion = json.dumps(metricas.get("matriz_confusion", []), ensure_ascii=False)
+        n_samples = metricas.get("calidad_datos", {}).get("n_filas")
         with conn.cursor() as cur:
             cur.execute(
                 """
                 CREATE TABLE IF NOT EXISTS ml_metricas (
                     id SERIAL PRIMARY KEY,
                     ts TIMESTAMPTZ DEFAULT NOW(),
-                    modelo_seleccionado TEXT,
-                    accuracy REAL,
-                    precision REAL,
-                    recall REAL,
-                    f1 REAL,
-                    roc_auc REAL,
-                    gini REAL,
-                    tiempo_total_s REAL,
-                    payload JSONB
+                    accuracy DOUBLE PRECISION,
+                    recall DOUBLE PRECISION,
+                    precision DOUBLE PRECISION,
+                    f1 DOUBLE PRECISION,
+                    roc_auc DOUBLE PRECISION,
+                    gini DOUBLE PRECISION,
+                    matriz_confusion TEXT,
+                    modelo TEXT,
+                    n_samples INTEGER
                 );
                 """
             )
             cur.execute(
                 """
                 INSERT INTO ml_metricas
-                    (modelo_seleccionado, accuracy, precision, recall, f1,
-                     roc_auc, gini, tiempo_total_s, payload)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    (ts, accuracy, recall, precision, f1, roc_auc, gini,
+                     matriz_confusion, modelo, n_samples)
+                VALUES (NOW(), %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """,
                 (
-                    seleccionado,
                     met.get("accuracy"),
-                    met.get("precision"),
                     met.get("recall"),
+                    met.get("precision"),
                     met.get("f1"),
                     met.get("roc_auc"),
                     met.get("gini"),
-                    metricas.get("tiempo_total_s"),
-                    json.dumps(metricas, ensure_ascii=False),
+                    matriz_confusion,
+                    seleccionado,
+                    n_samples,
                 ),
             )
         conn.commit()
         destinos["base_datos"] = True
-        logger.info("Métricas insertadas en Neon (tabla ml_metricas).")
+        logger.info("Métricas insertadas en Neon (ml_metricas, esquema nexora-backend).")
     except Exception as exc:  # noqa: BLE001
         conn.rollback()
-        logger.warning("No se pudieron guardar métricas en BD: %s", exc)
+        destinos["error_base_datos"] = str(exc)
+        logger.warning(
+            "Neon falló al guardar métricas en ml_metricas (esquema backend): %s",
+            exc,
+        )
     finally:
         conn.close()
     return destinos
@@ -163,11 +179,31 @@ def leer_metricas() -> dict:
 
 
 # --- Persistencia de PREDICCIONES --------------------------------------------
+def _columna_id(df: pd.DataFrame) -> str | None:
+    """Detecta una columna de identificador sin imponer un nombre único."""
+    candidatos = {
+        "id",
+        "cliente_id",
+        "id_cliente",
+        "customer_id",
+        "customerid",
+        "client_id",
+        "clientid",
+        "subscriber_id",
+        "entidad_id",
+    }
+    for col in df.columns:
+        normalizada = str(col).strip().lower()
+        if normalizada in candidatos or normalizada.endswith("_id") or normalizada.startswith("id_"):
+            return col
+    return None
+
+
 def guardar_predicciones(df: pd.DataFrame) -> dict:
     """
     Persiste el DataFrame scoreado en ``reports/`` (JSON + CSV) y, si hay BD,
-    en la tabla ``ml_predicciones`` (cada fila como JSON + columnas clave para
-    consulta directa).
+    en la tabla ``ml_predicciones`` usando el esquema consumido por
+    ``nexora-backend``.
     """
     destinos = {
         "archivo_json": str(RUTA_PREDICCIONES_JSON),
@@ -189,41 +225,57 @@ def guardar_predicciones(df: pd.DataFrame) -> dict:
 
     conn = _conectar()
     if conn is None:
+        if _ULTIMO_ERROR_BD:
+            destinos["error_base_datos"] = _ULTIMO_ERROR_BD
         return destinos
     try:
+        id_col = _columna_id(df)
         with conn.cursor() as cur:
             cur.execute(
                 """
                 CREATE TABLE IF NOT EXISTS ml_predicciones (
                     id SERIAL PRIMARY KEY,
                     ts TIMESTAMPTZ DEFAULT NOW(),
-                    prob_abandono REAL,
-                    segmento_riesgo TEXT,
-                    accion_retencion TEXT,
-                    payload JSONB
+                    entidad TEXT,
+                    entidad_id TEXT,
+                    score DOUBLE PRECISION,
+                    probabilidad DOUBLE PRECISION,
+                    prediccion TEXT
                 );
                 """
             )
-            for fila in registros:
+            for idx, fila in enumerate(registros, start=1):
+                entidad_id = fila.get(id_col) if id_col else idx
+                if pd.isna(entidad_id):
+                    entidad_id = idx
+                prob_abandono = fila.get("prob_abandono")
                 cur.execute(
                     """
                     INSERT INTO ml_predicciones
-                        (prob_abandono, segmento_riesgo, accion_retencion, payload)
-                    VALUES (%s, %s, %s, %s)
+                        (ts, entidad, entidad_id, score, probabilidad, prediccion)
+                    VALUES (NOW(), %s, %s, %s, %s, %s)
                     """,
                     (
-                        fila.get("prob_abandono"),
+                        "CLIENTE",
+                        entidad_id,
+                        prob_abandono,
+                        prob_abandono,
                         fila.get("segmento_riesgo"),
-                        fila.get("accion_retencion"),
-                        json.dumps(fila, ensure_ascii=False),
                     ),
                 )
         conn.commit()
         destinos["base_datos"] = True
-        logger.info("Predicciones insertadas en Neon (tabla ml_predicciones).")
+        logger.info(
+            "Predicciones insertadas en Neon (ml_predicciones, esquema nexora-backend, filas=%s).",
+            len(registros),
+        )
     except Exception as exc:  # noqa: BLE001
         conn.rollback()
-        logger.warning("No se pudieron guardar predicciones en BD: %s", exc)
+        destinos["error_base_datos"] = str(exc)
+        logger.warning(
+            "Neon falló al guardar predicciones en ml_predicciones (esquema backend): %s",
+            exc,
+        )
     finally:
         conn.close()
     return destinos

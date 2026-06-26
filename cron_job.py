@@ -125,6 +125,8 @@ def ejecutar() -> int:
         f"MÉTRICAS persistidas en reports/metricas.json "
         f"| Neon: {'sí' if destinos_met.get('base_datos') else 'no'}"
     )
+    if destinos_met.get("error_base_datos"):
+        logger.warning(f"Neon métricas falló: {destinos_met['error_base_datos']}")
 
     # --- 3. Scoring batch ----------------------------------------------------
     # persistir=False: el cron es el dueño explícito de la persistencia de
@@ -158,6 +160,8 @@ def ejecutar() -> int:
         f"reports/predicciones.(json|csv) "
         f"| Neon: {'sí' if destinos_pred.get('base_datos') else 'no'}"
     )
+    if destinos_pred.get("error_base_datos"):
+        logger.warning(f"Neon predicciones falló: {destinos_pred['error_base_datos']}")
 
     # --- Cierre --------------------------------------------------------------
     dur_total = time.perf_counter() - t_inicio

@@ -84,6 +84,11 @@ predicciones; luego **termina** con código `0` (éxito) o `1` (fallo). No levan
 servidor. Escribe siempre en `nexora-ml/reports` y, si hay `DATABASE_URL`, también
 en Neon. Es el comando que ejecuta el **Render Cron Job** (ver más abajo).
 
+El cron escribe en las tablas compartidas con `nexora-backend`:
+
+- `ml_metricas`: `ts`, `accuracy`, `recall`, `precision`, `f1`, `roc_auc`, `gini`, `matriz_confusion`, `modelo`, `n_samples`.
+- `ml_predicciones`: `ts`, `entidad`, `entidad_id`, `score`, `probabilidad`, `prediccion`.
+
 ### 3b. Pipeline DataOps completo (cron/local)
 
 ```bash
@@ -266,6 +271,14 @@ negocio) lo consume como un microservicio independiente:
   La autenticación se hace con la cabecera `X-API-Key` (`ML_API_KEY` compartida).
 - **Desacople.** El reentrenamiento (`POST /train`, costoso) se dispara de forma
   programada (cron/manual) sin afectar el camino de lectura de `nexora-backend`.
+
+La integración por BD usa el mismo esquema que las entidades Spring Boot
+`MlMetrica` y `MlPrediccion`. `persistencia.py` mantiene los reportes locales en
+`nexora-ml/reports/` y, si `DATABASE_URL` está configurada, inserta en Neon con
+estos mapeos:
+
+- Métricas: `modelo` sale de `modelo_seleccionado`, las métricas se toman del modelo seleccionado, `matriz_confusion` se guarda como JSON string y `n_samples` sale de `calidad_datos.n_filas`.
+- Predicciones: `entidad="CLIENTE"`, `entidad_id` sale de una columna ID si existe o del índice `1..N`, y `score`/`probabilidad` usan `prob_abandono`; `prediccion` usa `segmento_riesgo`.
 
 ```
                  ┌──────────────────────┐      HTTP /score /metrics      ┌────────────────┐
