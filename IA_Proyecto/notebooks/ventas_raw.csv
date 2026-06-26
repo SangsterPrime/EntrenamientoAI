@@ -1,0 +1,12 @@
+id,fecha,producto,cantidad,precio,ciudad
+1,2024-01-01,Notebook,1,800000,Santiago
+2,2024/01/02,Mouse,2,15000,Santiago
+3,2024-01-03,Teclado,1,25000,Valparaiso
+4,2024-01-03,Teclado,1,25000,Valparaiso
+5,2024-01-04,Monitor,,120000,Concepcion
+6,2024-01-05,Notebook,1,800000,Santiago
+7,2024-01-06,Mouse,2,15000,
+8,2024-01-07,Teclado,1,abc,Valparaiso
+9,2024-01-08,Notebook,1,800000,Santiago
+10,2024-01-08,Notebook,1,800000,Santiago
+10,2024-01-08,Notebook,1,800000,Santiago

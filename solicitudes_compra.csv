@@ -1,0 +1,16 @@
+id,producto,cantidad,presupuesto_max,urgencia,solicitante,fecha_solicitud
+1,Laptops empresariales,15,22500000,alta,Esteban Gamboa,2025-03-01
+2,Resmas de papel carta,200,1200000,baja,Maria Soto,2025-03-02
+3,Toner para impresora HP,30,4500000,media,Carlos Muñoz,2025-03-03
+4,Sillas ergonomicas,25,12500000,media,Ana Lopez,2025-03-04
+5,Servidor NAS 12TB,3,4200000,alta,Juan Perez,2025-03-05
+6,Escritorios modulares,20,14000000,baja,Esteban Gamboa,2025-03-06
+7,Licencias Microsoft 365,50,7500000,alta,Maria Soto,2025-03-07
+8,Cables de red CAT6,500,2500000,media,Carlos Muñoz,2025-03-08
+9,Monitores 27 pulgadas,30,18000000,media,Ana Lopez,2025-03-09
+10,Extinguidores ABC 10kg,12,960000,baja,Juan Perez,2025-03-10
+11,Router corporativo gigabit,8,3200000,alta,Esteban Gamboa,2025-03-11
+12,Papel higienico industrial,300,450000,baja,Maria Soto,2025-03-12
+13,Camaras de seguridad IP,20,6000000,media,Carlos Muñoz,2025-03-13
+14,Software antivirus corporativo,50,4500000,alta,Ana Lopez,2025-03-14
+15,Mesas de reuniones,5,3500000,media,Juan Perez,2025-03-15

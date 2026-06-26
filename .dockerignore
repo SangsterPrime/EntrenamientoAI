@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+.env
+.git
+.gitignore
+IA_Proyecto/logs
+# Neon es la base de datos (remota), no se genera archivo .db local
+nexora-ml/logs
+nexora-ml/data/clientes_scoreados.csv
+nexora-ml/models/*.pkl
+nexora-ml/.git
+venv
+.venv

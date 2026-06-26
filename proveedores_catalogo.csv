@@ -1,0 +1,11 @@
+id,nombre,rut,email,categoria,reputacion_score
+1,Distribuidora Santiago Ltda.,76.123.456-7,ventas@dsantiago.cl,Tecnologia,85
+2,Insumos Industriales Chile SPA,77.234.567-8,contacto@iichile.cl,Oficina,72
+3,Proveedora Nacional del Sur,78.345.678-9,info@prosur.cl,Tecnologia,90
+4,Comercial del Pacifico Ltda.,79.456.789-0,ventas@compac.cl,Oficina,65
+5,Suministros Tecnologicos SPA,80.567.890-1,ventas@sutech.cl,Tecnologia,88
+6,Logistica y Abastecimiento SA,81.678.901-2,ops@logabastece.cl,Industrial,78
+7,Materiales de Construccion RML,82.789.012-3,pedidos@rmlconst.cl,Industrial,82
+8,Oficina Total Express Ltda.,83.890.123-4,ventas@oficinatotal.cl,Oficina,70
+9,NetCloud Solutions Spa,84.901.234-5,soporte@netcloud.cl,Tecnologia,92
+10,Seguridad Integral Chile SA,85.012.345-6,ventas@seguridadchile.cl,Seguridad,80

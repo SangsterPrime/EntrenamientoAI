@@ -1,0 +1,163 @@
+{
+  "name": "NEXORA - Carga Clientes Scoreados a PostgreSQL",
+  "nodes": [
+    {
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "name": "Inicio Manual",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {},
+      "notes": "Ejecutar manualmente tras 'python pipeline.py'"
+    },
+    {
+      "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "name": "Ejecutar Pipeline",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [470, 300],
+      "parameters": {
+        "command": "python",
+        "arguments": {
+          "values": [
+            {
+              "name": "pipeline.py",
+              "value": "pipeline.py"
+            }
+          ],
+          "options": {}
+        },
+        "options": {
+          "workingDirectory": "/workspace",
+          "timeout": 120
+        }
+      },
+      "notes": "Ejecuta el pipeline Python que genera clientes_scoreados.csv"
+    },
+    {
+      "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "name": "Leer CSV Scoreado",
+      "type": "n8n-nodes-base.readBinaryFiles",
+      "typeVersion": 1,
+      "position": [690, 300],
+      "parameters": {
+        "filePath": "/workspace/nexora-ml/data/clientes_scoreados.csv"
+      },
+      "notes": "Lee el archivo CSV generado por el pipeline"
+    },
+    {
+      "id": "d4e5f6a7-b8c9-0123-defa-234567890123",
+      "name": "Parsear CSV",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [910, 300],
+      "parameters": {
+        "jsCode": "const csvData = items[0].binary.data;\nconst binaryData = await this.helpers.getBinaryDataBuffer(0, 'data');\nconst csvString = binaryData.toString('utf-8');\nconst lines = csvString.trim().split('\\n');\nconst headers = lines[0].split(',').map(h => h.trim());\nconst result = [];\nfor (let i = 1; i < lines.length; i++) {\n  const values = lines[i].split(',').map(v => v.trim());\n  const row = {};\n  headers.forEach((h, idx) => {\n    let val = values[idx];\n    if (val === '') val = null;\n    if (['edad','anos_cliente','llamadas_mes','reclamos','plan_premium','abandona'].includes(h)) {\n      val = parseInt(val, 10);\n    } else if (['uso_datos_gb','prob_abandono'].includes(h)) {\n      val = parseFloat(val);\n    }\n    row[h] = val;\n  });\n  result.push({ json: row });\n}\nreturn result;"
+      },
+      "notes": "Convierte el CSV binario en objetos JSON tipados"
+    },
+    {
+      "id": "e5f6a7b8-c9d0-1234-efab-345678901234",
+      "name": "PostgreSQL - UPSERT",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1130, 300],
+      "parameters": {
+        "operation": "upsert",
+        "schema": "public",
+        "table": "clientes_scoreados",
+        "columns": {
+          "values": [
+            { "column": "edad" },
+            { "column": "anos_cliente" },
+            { "column": "uso_datos_gb" },
+            { "column": "llamadas_mes" },
+            { "column": "reclamos" },
+            { "column": "plan_premium" },
+            { "column": "abandona" },
+            { "column": "prob_abandono" },
+            { "column": "segmento_riesgo" },
+            { "column": "accion_retencion" }
+          ]
+        },
+        "upsertConf keys": {
+          "values": [
+            {
+              "column": "id"
+            }
+          ],
+          "options": {}
+        },
+        "additionalFields": {
+          "mode": "independently",
+          "queryReplacement": "",
+          "preSql": [
+            "CREATE TABLE IF NOT EXISTS public.clientes_scoreados (\n  id SERIAL PRIMARY KEY,\n  edad INTEGER,\n  anos_cliente INTEGER,\n  uso_datos_gb REAL,\n  llamadas_mes INTEGER,\n  reclamos INTEGER,\n  plan_premium INTEGER,\n  abandona INTEGER,\n  prob_abandono REAL,\n  segmento_riesgo TEXT,\n  accion_retencion TEXT,\n  fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);"
+          ]
+        },
+        "options": {}
+      },
+      "notes": "Crea la tabla si no existe y hace UPSERT de los 500 registros",
+      "credentials": {
+        "postgres": {
+          "id": "CREDENCIALES_POSTGRES_AQUI",
+          "name": "PostgreSQL NEXORA"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Inicio Manual": {
+      "main": [
+        [
+          {
+            "node": "Ejecutar Pipeline",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ejecutar Pipeline": {
+      "main": [
+        [
+          {
+            "node": "Leer CSV Scoreado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leer CSV Scoreado": {
+      "main": [
+        [
+          {
+            "node": "Parsear CSV",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parsear CSV": {
+      "main": [
+        [
+          {
+            "node": "PostgreSQL - UPSERT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "versionId": "1.0.0",
+  "triggerCount": 0,
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": ["NEXORA", "DataOps", "IA", "Churn"]
+}
